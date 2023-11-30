@@ -1,0 +1,1 @@
+const String tSplashImage = "assets/images/piano-bg.png";
