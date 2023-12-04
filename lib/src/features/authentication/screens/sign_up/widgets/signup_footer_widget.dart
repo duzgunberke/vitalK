@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:piano_ls/src/constants/image_strings.dart';
+import 'package:piano_ls/src/constants/sizes.dart';
 import 'package:piano_ls/src/constants/texts.dart';
 import 'package:piano_ls/src/features/authentication/screens/login/login_screen.dart';
 
@@ -15,6 +15,7 @@ class SignUpFooterWidget extends StatelessWidget {
     return Column(
       children: [
         const Text("OR"),
+        const SizedBox(height: tFormHeight-20,),
         SizedBox(
           width: double.infinity,
           child: OutlinedButton.icon(
