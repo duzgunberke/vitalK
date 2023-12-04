@@ -1,63 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:piano_ls/src/common/fade_in_animations/animation_design.dart';
+import 'package:piano_ls/src/common/fade_in_animations/fade_in_animation_model.dart';
 import 'package:piano_ls/src/constants/Colors.dart';
 import 'package:piano_ls/src/constants/image_strings.dart';
 import 'package:piano_ls/src/constants/sizes.dart';
 import 'package:piano_ls/src/constants/texts.dart';
+import 'package:piano_ls/src/features/authentication/controllers/fade_in_animation_controller.dart';
 import 'package:piano_ls/src/features/authentication/controllers/splash_screen_controller.dart';
 
-class SpalashScreen extends StatelessWidget {
-  SpalashScreen({Key? key}) : super(key: key);
-
-  final spalashScreenController = Get.put(SpalashScreenController());
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    spalashScreenController.startAnimation();
+    final controller = Get.put(FadeInAnimationController());
+    controller.startSplashAnimation();
+
     return Scaffold(
-      body: Stack(children: [
-        Obx(()=> AnimatedPositioned(
-              duration: const Duration(milliseconds: 1600),
-              top: spalashScreenController.animate.value ? 0 : -30,
-              left: spalashScreenController.animate.value ? 0 : -30,
-              child: const Image(image: AssetImage(tSplashImage))),
-        ),
-        Obx(()=> AnimatedPositioned(
-            duration: const Duration(milliseconds: 1600),
-            top: 80,
-            left: spalashScreenController.animate.value ? 10 : -80,
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 1500),
-              opacity: spalashScreenController.animate.value ? 1 : 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    tAppName,
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  Text(
-                    tAppTagLine,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  )
-                ],
-              ),
+      body: Stack(
+        children: [
+          TFadeInAnimation(
+            durationInMs: 1600,
+            animate: TAnimatePosition(
+              topAfter: 0,
+              topBefore: -30,
+              leftBefore: -30,
+              leftAfter: 0,
+            ),
+            child: const Image(image: AssetImage(tSplashImage)),
+          ),
+          TFadeInAnimation(
+            durationInMs: 2000,
+            animate: TAnimatePosition(
+              topBefore: 80,
+              topAfter: 80,
+              leftAfter: tDefaultSize,
+              leftBefore: -80,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tAppName,
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+                Text(
+                  tAppTagLine,
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+              ],
             ),
           ),
-        ),
-        Obx(()=> AnimatedPositioned(
-              duration: const Duration(milliseconds: 2400),
-              bottom: spalashScreenController.animate.value ? 100 : 0,
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 2000),
-                opacity: spalashScreenController.animate.value ? 1 : 0,
-                child: const Image(image: AssetImage(tSplashImage)),
-              )),
-        ),
-        Obx(()=> AnimatedPositioned(
-            duration: const Duration(milliseconds: 2400),
-            bottom: spalashScreenController.animate.value ? 60 : 0,
-            right: tDefaultSize,
+          TFadeInAnimation(
+            durationInMs: 2400,
+            animate: TAnimatePosition(bottomBefore: 0, bottomAfter: 100),
+            child: const Image(image: AssetImage(tSplashImage)),
+          ),
+          TFadeInAnimation(
+            durationInMs: 2400,
+            animate: TAnimatePosition(
+              bottomBefore: 0,
+              bottomAfter: 60,
+              rightBefore: tDefaultSize,
+              rightAfter: tDefaultSize,
+            ),
             child: Container(
               width: tSplashContainerSize,
               height: tSplashContainerSize,
@@ -67,8 +74,8 @@ class SpalashScreen extends StatelessWidget {
               ),
             ),
           ),
-        )
-      ]),
+        ],
+      ),
     );
   }
 }
