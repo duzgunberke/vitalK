@@ -8,6 +8,7 @@ import 'package:piano_ls/src/constants/sizes.dart';
 import 'package:piano_ls/src/constants/texts.dart';
 import 'package:piano_ls/src/features/authentication/controllers/fade_in_animation_controller.dart';
 import 'package:piano_ls/src/features/authentication/screens/login/login_screen.dart';
+import 'package:piano_ls/src/features/authentication/screens/sign_up/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -67,8 +68,8 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                           child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(tSignup),
+                              onPressed: ()=> Get.to(()=>const SignUpScreen()),
+                        child: const Text(tSignup),
                       ))
                     ],
                   )

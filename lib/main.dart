@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:piano_ls/src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
 import 'package:piano_ls/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:piano_ls/src/utils/theme/theme.dart';
 

@@ -7,7 +7,6 @@ import 'package:piano_ls/src/constants/image_strings.dart';
 import 'package:piano_ls/src/constants/sizes.dart';
 import 'package:piano_ls/src/constants/texts.dart';
 import 'package:piano_ls/src/features/authentication/controllers/fade_in_animation_controller.dart';
-import 'package:piano_ls/src/features/authentication/controllers/splash_screen_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);

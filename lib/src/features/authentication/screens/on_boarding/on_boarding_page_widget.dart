@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:piano_ls/src/constants/sizes.dart';
-import 'package:piano_ls/src/constants/texts.dart';
 import 'package:piano_ls/src/features/authentication/models/model_onboarding.dart';
 
 class OnBoardingPageWidget extends StatelessWidget {
