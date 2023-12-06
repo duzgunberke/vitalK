@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "909749105024",
+    "project_id": "vitalk-e34d1",
+    "storage_bucket": "vitalk-e34d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909749105024:android:9b0272a66d847253c79165",
+        "android_client_info": {
+          "package_name": "com.example.piano_ls"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAi1fJMXMpp5JLv9c0yIILisiNHB2WX80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

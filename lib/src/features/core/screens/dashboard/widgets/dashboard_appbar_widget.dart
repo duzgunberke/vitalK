@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:piano_ls/src/constants/colors.dart';
 import 'package:piano_ls/src/constants/image_strings.dart';
 import 'package:piano_ls/src/constants/texts.dart';
+import 'package:piano_ls/src/repository/authentication/authentication_repository.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DashboardAppBar({
-    Key? key
-  }): super(key: key);
+  const DashboardAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +24,15 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: tCardBgColor),
           child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                AuthenticationRepository.instance.logout();
+              },
               icon: const Image(image: AssetImage(tSplashImage))),
         )
       ],
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(55);
 }
