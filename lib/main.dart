@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:piano_ls/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:piano_ls/src/features/core/screens/dashboard/microphone.dart';
 import 'package:piano_ls/src/utils/theme/theme.dart';
 
 void main() => runApp(const App());
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       defaultTransition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(milliseconds: 500),
-      home: const SplashScreen(),
+      home: const SpeechScreen(),
     );
   }
 }
