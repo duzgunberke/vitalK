@@ -72,3 +72,31 @@ const String tDashboardBannerTitle2 = "Dashboard Banner Title 2";
 const String tDashboardBannerSubTitle = "Dashboard Banner Subtitle";
 const String tDashboardButton = "Dashboard Button";
 const String tDashboardTopCourses = "Dashboard Top Courses";
+
+const String tProfile = "Profile";
+const String tEditProfile = "Edit Profile";
+const String tLogoutDialogHeading = "Logout";
+const String  tProfileHeading = "vitalK";
+const String  tProfileSubHeading = "berkeduzgun@viveven.com";
+
+const String  tMenu5 = "Logout";
+const String  tMenu1 = "Setting";
+const String  tMenu4 = "Information";
+const String  tMenu2 = "Billing Details";
+const String  tMenu3 = "User Management";
+
+const String  tDelete = "Delete";
+const String  tJoined = "Joined";
+const String  tJoinedAt = "7 December 2023";
+
+
+
+
+
+
+
+
+
+
+
+
