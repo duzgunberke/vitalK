@@ -27,6 +27,7 @@ dependencies:
   firebase_core: ^2.24.0
   firebase_auth: ^4.15.0
   line_awesome_flutter: ^2.0.0
+  passwordfield: ^0.2.0
 
 dev_dependencies:
   flutter_test:

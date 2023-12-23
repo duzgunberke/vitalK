@@ -7,6 +7,7 @@ import 'package:piano_ls/src/constants/sizes.dart';
 import 'package:piano_ls/src/constants/texts.dart';
 import 'package:piano_ls/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:piano_ls/src/features/core/screens/profile/widgets/profile_menu.dart';
+import 'package:piano_ls/src/repository/authentication/authentication_repository.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,7 +18,8 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
+            onPressed: () => Get.back(),
+            icon: const Icon(LineAwesomeIcons.angle_left)),
         title: Text(
           tProfile,
           style: Theme.of(context).textTheme.headlineMedium,
@@ -128,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
                 icon: LineAwesomeIcons.alternate_sign_out,
                 textColor: Colors.red,
                 endIcon: false,
-                onPress: () {},
+                onPress: () => AuthenticationRepository.instance.logout(),
               ),
             ],
           ),
